@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 1. Global safety net - default deny all collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Users Collection Rules
+    match /users/{userId} {
+      // Backend proxy node server coordinates reading and writing.
+      allow read, write: if true;
+    }
+  }
+}

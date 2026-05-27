@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Account",
+      "description": "A user's profile and mining configs including credentials, crypto balances, and e-wallet settings.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the user account."
+        },
+        "username": {
+          "type": "string",
+          "description": "Subtle user identification name."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the user."
+        },
+        "passwordHex": {
+          "type": "string",
+          "description": "Password or salted credentials representation."
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "description": "Whether the user is an administrator."
+        },
+        "joinedAt": {
+          "type": "string",
+          "description": "The date when the user registered in the system."
+        },
+        "miningConfig": {
+          "type": "object",
+          "description": "The complete mining power, wallet linkage, and histories."
+        }
+      },
+      "required": [
+        "id",
+        "username",
+        "email",
+        "passwordHex",
+        "isAdmin",
+        "joinedAt",
+        "miningConfig"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Collection storing all independent user states, wallets, and transaction histories securely."
+    }
+  }
+}

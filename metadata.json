@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Rupiah Mine Pro",
+  "description": "Secure 24/7 IDR mining with automatic e-wallet withdrawals, referral bonuses, and encrypted storage for your balance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
